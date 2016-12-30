@@ -12,4 +12,5 @@ export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
 
-[ -s "`brew --prefix`/bin/virtualenvwrapper.sh" ] && source "`brew --prefix`/bin/virtualenvwrapper.sh"
+# Very slow & I don't use it anymore.
+# [ -s "`brew --prefix`/bin/virtualenvwrapper.sh" ] && source "`brew --prefix`/bin/virtualenvwrapper.sh"

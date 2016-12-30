@@ -2,25 +2,26 @@
 # NVM
 ###############################################################
 export NVM_DIR=~/.nvm
-[ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
+[ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh" --no-use
 
 ##############################################################
 ## Fix NPM completion https://github.com/npm/npm/issues/1976
 ###############################################################
-autoload -U add-zsh-hook
-load-nvmrc() {
-  if [[ -f .nvmrc && -r .nvmrc ]]; then
-    nvm use
-  elif [[ $(nvm version) != $(nvm version default)  ]]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
+# Too SLOW
+# autoload -U add-zsh-hook
+# load-nvmrc() {
+#   if [[ -f .nvmrc && -r .nvmrc ]]; then
+#     nvm use
+#   elif [[ $(nvm version) != $(nvm version default)  ]]; then
+#     echo "Reverting to nvm default version"
+#     nvm use default
+#   fi
+# }
 
-if command -v nvm >/dev/null; then
-  add-zsh-hook chpwd load-nvmrc
-  load-nvmrc
-fi
+# if command -v nvm >/dev/null; then
+#   add-zsh-hook chpwd load-nvmrc
+#   load-nvmrc
+# fi
 
 ###-begin-npm-completion-###
 #
